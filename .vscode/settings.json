@@ -3,10 +3,12 @@
         "creds",
         "datepicker",
         "Formik",
+        "Jamies",
         "Mediat",
         "notaguid",
         "occured",
         "Toastify",
-        "unauthorised"
+        "unauthorised",
+        "Wembly"
     ]
 }
