@@ -23,7 +23,7 @@ interface Props {
     activity: Activity
 }
 
-export default observer (function ActivityDetailedHeader({activity}: Props) {
+export default observer(function ActivityDetailedHeader({activity}: Props) {
     const {activityStore: {updateAttendance, loading, cancelActivityToogle }} = useStore();
     return (
         <Segment.Group>
@@ -43,7 +43,7 @@ export default observer (function ActivityDetailedHeader({activity}: Props) {
                                 />
                                 <p>{format(activity.date!, 'dd MMM yyyy h:mm aa')}</p>
                                 <p>
-                                    Hosted by <Link to={`/profiles/${activity.host?.username}`} ><strong>{activity.host?.displayName}</strong></Link>
+                                    Hosted by <strong><Link to={`/profiles/${activity.host?.username}`}>{activity.host?.displayName}</Link></strong>
                                 </p>
                             </Item.Content>
                         </Item>

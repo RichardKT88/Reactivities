@@ -45,11 +45,9 @@ export default observer(function ActivityForm() {
         } else {
             updateActivity(activity).then(() => history.push(`/activities/${activity.id}`))
         }
-    }
+    }  
 
-  
-
-    if(loadingInitial) return <LoadingComponent content='Loading activity...'/>
+    if(loadingInitial) return <LoadingComponent content='Loading activity...' />
 
     return (
         <Segment clearing>

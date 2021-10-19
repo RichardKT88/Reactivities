@@ -37,8 +37,7 @@ export default function ActivityListItem({activity} : Props) {
                                     </Label>
                                 </Item.Description>
                             )}
-                       </Item.Content>
-                       
+                       </Item.Content>                       
                    </Item>
                </Item.Group>
            </Segment>
