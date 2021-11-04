@@ -4,6 +4,7 @@
         "creds",
         "datepicker",
         "Formik",
+        "hoverable",
         "Jamies",
         "Mediat",
         "notaguid",
@@ -11,6 +12,7 @@
         "Toastify",
         "Toogle",
         "unauthorised",
+        "Unfollow",
         "Wembly"
     ]
 }
