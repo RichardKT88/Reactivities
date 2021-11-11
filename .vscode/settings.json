@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "browserslist",
         "Cloudinary",
         "creds",
         "datepicker",
@@ -8,11 +9,16 @@
         "Jamies",
         "Mediat",
         "notaguid",
+        "Npgsql",
         "occured",
+        "postbuild",
+        "scroller",
+        "signalr",
         "Toastify",
         "Toogle",
         "unauthorised",
         "Unfollow",
-        "Wembly"
+        "Wembly",
+        "wwwroot"
     ]
 }
