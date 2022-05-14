@@ -8,10 +8,10 @@
 - [Reactivities](#reactivities)
   - [Table Of Contents](#table-of-contents)
   - [Install Packages](#install-packages)
-  - [Project Setup and Execution](#project-setup-execution)
+  - [Project Setup and Execution](#project-setup-and-execution)
   - [Screenshots](#screenshots)
-  - [What I've learned](#what-i-learned)
-  - [Tech-Stack](#tech-stack)
+  - [What I've learned](#what-ive-learned-)
+  - [Tech Stack](#tech-stack-%EF%B8%8F)
 
 # Reactivities
 A social platform application that is being continually added to in conjunction with the Udemy course listed below. My end goal is to learn how to create a full application that incorporates data management and API's using dotnet and displays a UI built with React.js from start to finish. 
@@ -81,7 +81,7 @@ A user can manage his profile or view other users profile, on his own profile he
 While adding a photo to the current authenticated user, he can drag and drop or choose an image, crop it and get a real time preview of the result. 
 <p><img src="assets/photo-upload.png" width="300" /></p>
 
-# What I've learned 📚
+## What I've learned 📚
 
 ✔️ Creating a multi-project solution using the the ASP.NET Core WebAPI and the React app using the DotNet CLI and the create-react-app utility\
 ✔️ Clean Architecture and the CQRS + Mediator pattern \
@@ -103,7 +103,8 @@ While adding a photo to the current authenticated user, he can drag and drop or 
 To view the course on Udemy, **[click here](https://www.udemy.com/course/complete-guide-to-building-an-app-with-net-core-and-react/#instructor-1)**
 
 
-# Tech-Stack 🛠️
+## Tech Stack 🛠️
+
 | Tech | Usage
 ------------ | -------------
 [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) | .NET Language Used
