@@ -12,6 +12,7 @@ namespace Application.Activities
 {
     public class Create
     {
+        //Classes command não retornam nada, diferente das queries.
         public class Command : IRequest<Result<Unit>>
         {
             public Activity Activity { get; set; }

@@ -11,7 +11,7 @@ namespace API.Controllers
 {
     public class ActivitiesController : BaseApiController
     {
-     
+        //faz a injenção de dependência do mediator no controller e faz ele mandar para o controller a lista de atividades.
         [HttpGet]
         public async Task<IActionResult> GetActivities([FromQuery]ActivityParams param)
         {

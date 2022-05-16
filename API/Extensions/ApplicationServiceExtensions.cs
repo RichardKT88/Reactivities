@@ -14,8 +14,10 @@ using Persistence;
 
 namespace API.Extensions
 {
+    //Aqui ficam as services que ficariam na classe Startup, ela é static para não precisa instanciar uma nova classe.
     public static class ApplicationServiceExtensions
     {
+        //como estamos estendendo o IServiceCollection precisamos colocar o this no parâmetro.
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
                services.AddSwaggerGen(c =>

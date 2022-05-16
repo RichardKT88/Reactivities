@@ -17,9 +17,9 @@ namespace API
     public class Program
     {
         public static async Task Main(string[] args)
-        {
+        {   //Checar se temos um banco de dados ao iniciar o projeto, se não tivermos iremos criar um.
             var host = CreateHostBuilder(args).Build();
-
+            //hospeda o serviço que foi criado, mas joga fora depois que o serviço foi criado.
             using var scope = host.Services.CreateScope();
 
             var services = scope.ServiceProvider;
@@ -33,6 +33,7 @@ namespace API
             }
             catch (Exception ex)
             {
+                //o logger cria um registro de eventos relevantes para o sistema
                 var logger = services.GetRequiredService<ILogger<Program>>();
                 logger.LogError(ex, "An error occured during migration");   
             }

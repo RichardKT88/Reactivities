@@ -38,7 +38,7 @@ namespace Application.Activities
                 var activity = await _context.Activities.FindAsync(request.Activity.Id);
 
                 if (activity == null) return null;
-
+                //o _mapper.map(o request.Activity e a fonte dos dados, os dados que foram trazidos do DB) => mapeia para fazer o update.
                 _mapper.Map(request.Activity, activity);
 
                 var result = await _context.SaveChangesAsync() > 0;

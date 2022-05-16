@@ -10,13 +10,15 @@ using Persistence;
 
 namespace Application.Activities
 {
+    //no padrão mediator você cria um classe aninhada no caso query e handler
     public class List
     {
+        //As query säo as que puxam os dados.
         public class Query : IRequest<Result<PagedList<ActivityDto>>> 
         {
             public ActivityParams Params { get; set; }         
         }
-
+        //A Handler é a classe que irá lidar com os dados trazidos pela query.
         public class Handler : IRequestHandler<Query, Result<PagedList<ActivityDto>>>
         {
             private readonly DataContext _context;
@@ -28,7 +30,7 @@ namespace Application.Activities
                 _mapper = mapper;
                 _context = context;
             }
-
+            //O CancellationToken serve para cancelar uma requisição, caso ela esteja demorando, ele interrompe o processo de carregamento.
             public async Task<Result<PagedList<ActivityDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
                 var query =  _context.Activities
