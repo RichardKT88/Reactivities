@@ -71,15 +71,22 @@ namespace API
                 });
             }
 
-            // app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCookiePolicy();
 
             app.UseDefaultFiles();
 
             app.UseStaticFiles();
 
-            app.UseCors("CorsPolicy");
+            //app.UseCors("CorsPolicy");
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
 
             app.UseAuthentication();
 

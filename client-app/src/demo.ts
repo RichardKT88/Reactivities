@@ -1,11 +1,11 @@
-let data = 42;
+/*let data = 42;
 data = '42';
 
 let data2 : any = 42;
 data2 = '42';
 
 let data3: number | string = 42;
-data3 = 42;
+data3 = 42;*/
 
 export interface Duck {
     name: string;
