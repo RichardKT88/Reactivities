@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Security.Claims;
@@ -113,7 +114,35 @@ namespace API.Controllers
             
             var fbInfo = JsonConvert.DeserializeObject<dynamic>(await response.Content.ReadAsStringAsync());
 
-            return new UserDto();
+            var username = (string)fbInfo.id;
+
+            var user = await _userManager.Users.Include(p => p.Photos)
+                .FirstOrDefaultAsync(x => x.UserName == username);
+
+            if (user != null) return CreateUserObject(user);
+
+            user = new AppUser
+            {
+                DisplayName = (string)fbInfo.name,
+                Email = (string)fbInfo.email,
+                UserName = (string)fbInfo.id,
+                Photos = new List<Photo> 
+                { 
+                    new Photo 
+                    { 
+                        Id = "fb_" + (string)fbInfo.id, 
+                        Url = (string)fbInfo.picture.data.url, 
+                        IsMain = true 
+                    } 
+                }
+
+            };
+
+            var result = await _userManager.CreateAsync(user);
+
+            if (!result.Succeeded) return BadRequest("Problem creating user account");
+
+            return CreateUserObject(user);
         }
 
         private UserDto CreateUserObject(AppUser user) 

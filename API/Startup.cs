@@ -6,6 +6,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -74,8 +75,12 @@ namespace API
             //app.UseHttpsRedirection();
 
             app.UseRouting();
+            var cookiePolicyOptions = new CookiePolicyOptions
+            {
+                MinimumSameSitePolicy = SameSiteMode.None,
+            };
 
-            app.UseCookiePolicy();
+            app.UseCookiePolicy(cookiePolicyOptions);
 
             app.UseDefaultFiles();
 

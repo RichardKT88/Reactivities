@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container} from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import NavBar from './NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
 import { observer } from 'mobx-react-lite';
@@ -19,12 +19,13 @@ import PrivateRoute from './PrivateRoute';
 
 function App() {
   const location = useLocation();
-  const {commonStore, userStore} = useStore();
+  const { commonStore, userStore } = useStore();
 
   useEffect(() => {
     if (commonStore.token) {
       userStore.getUser().finally(() => commonStore.setAppLoaded());
     } else {
+      userStore.getFacebookLoginStatus().then(() => commonStore.setAppLoaded());
       commonStore.setAppLoaded();
     }
   }, [commonStore, userStore])
@@ -33,29 +34,29 @@ function App() {
 
   return (
     <>
-      <ToastContainer position='bottom-right' hideProgressBar/>
-      <ModalContainer/>
-      <Route exact path='/' component={HomePage} />      
+      <ToastContainer position='bottom-right' hideProgressBar />
+      <ModalContainer />
+      <Route exact path='/' component={HomePage} />
       <Route
         path={'/(.+)'}
         render={() => (
           <>
             <NavBar />
-            <Container style={{marginTop: '7em'}}>
+            <Container style={{ marginTop: '7em' }}>
               <Switch>
-                <PrivateRoute exact path='/activities' component={ActivityDashboard} />      
-                <PrivateRoute path='/activities/:id' component={ActivityDetails} />      
-                <PrivateRoute key={location.key} path={['/createActivity','/manage/:id']} component={ActivityForm} />      
-                <PrivateRoute path={'/profiles/:username'} component={ProfilePage} />      
+                <PrivateRoute exact path='/activities' component={ActivityDashboard} />
+                <PrivateRoute path='/activities/:id' component={ActivityDetails} />
+                <PrivateRoute key={location.key} path={['/createActivity', '/manage/:id']} component={ActivityForm} />
+                <PrivateRoute path={'/profiles/:username'} component={ProfilePage} />
                 <PrivateRoute path='/errors' component={TestErrors} />
                 <Route path='/server-error' component={ServerError} />
                 <Route component={NotFound} />
-              </Switch>             
-            </Container>  
+              </Switch>
+            </Container>
           </>
         )}
       />
-        
+
     </>
   );
 }
