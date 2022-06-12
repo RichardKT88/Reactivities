@@ -8,7 +8,7 @@ namespace API.Extensions
         public static void AddPaginationHeader(this HttpResponse response, int currentPage,
             int ItemsPerPage, int totalItems, int totalPages)
         {
-            var paginationHeader = new 
+            var paginationHeader = new
             {
                 currentPage,
                 ItemsPerPage,
@@ -16,7 +16,6 @@ namespace API.Extensions
                 totalPages
             };
             response.Headers.Add("Pagination", JsonSerializer.Serialize(paginationHeader));
-            response.Headers.Add("Access-Control-Expose-Headers", "Pagination");
 
         }
     }
