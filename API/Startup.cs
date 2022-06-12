@@ -52,7 +52,8 @@ namespace API
                 .BlockAllMixedContent()
                 .StyleSources(s => s.Self().CustomSources(
                     "https://fonts.googleapis.com",
-                    "sha256-yChqzBduCCi4o4xdbXRXh4U/t1rP4UUUMJt+rB+ylUI="
+                    "sha256-yChqzBduCCi4o4xdbXRXh4U/t1rP4UUUMJt+rB+ylUI=",
+                    "sha256-wkAU1AW/h8YFx0XlzvpTllAKnFEO2tw8aKErs5a26LY="
                     ))
                 .FontSources(s => s.Self().CustomSources("https://fonts.gstatic.com", "data:"))
                 .FormActions(s => s.Self())
@@ -60,11 +61,16 @@ namespace API
                 .ImageSources(s => s.Self().CustomSources(
                     "https://res.cloudinary.com",
                     "https://www.facebook.com",
-                    "https://scontent-iad3-2.xx.fbcdn.net"))
+                    "https://scontent-iad3-2.xx.fbcdn.net",
+                    "https://scontent.fcgh7-1.fna.fbcdn.net",
+                    "data:"
+                    ))
                 .ScriptSources(s => s.Self().CustomSources(
                     "sha256-BODXSOip7GpBT4WVS+qjnNRRxTid6JIXiEE5cVAE2Ag=",
                     "https://connect.facebook.net",
-                    "sha256-8/x0JSs5MRRLxTgyjVUt/0HkVgclaNajrfry5WL6+Kg="
+                    "sha256-8/x0JSs5MRRLxTgyjVUt/0HkVgclaNajrfry5WL6+Kg=",
+                    "sha256-Tui7QoFlnLXkJCSl1/JvEZdIXTmBttnWNxzJpXomQjg=",
+                    "sha256-CzYN5MMT8wA9fbIe+4hC2BQ8qaszoPPdWMDLwuEJDcM="
                     ))
             );
 
