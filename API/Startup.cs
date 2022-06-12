@@ -63,6 +63,7 @@ namespace API
                     "https://www.facebook.com",
                     "https://scontent-iad3-2.xx.fbcdn.net",
                     "https://scontent.fcgh7-1.fna.fbcdn.net",
+                    "https://platform-lookaside.fbsbx.com",
                     "data:"
                     ))
                 .ScriptSources(s => s.Self().CustomSources(
