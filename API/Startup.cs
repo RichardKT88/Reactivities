@@ -64,7 +64,8 @@ namespace API
                     "https://scontent-iad3-2.xx.fbcdn.net",
                     "https://scontent.fcgh7-1.fna.fbcdn.net",
                     "https://platform-lookaside.fbsbx.com",
-                    "data:"
+                    "data:",
+                    "blob:"
                     ))
                 .ScriptSources(s => s.Self().CustomSources(
                     "sha256-BODXSOip7GpBT4WVS+qjnNRRxTid6JIXiEE5cVAE2Ag=",
