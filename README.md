@@ -2,8 +2,6 @@
 <h3 align="center"> The complete guide to building an app from start to finish using ASP.NET Core <br /> , React (with Typescript) and Mobx - by Neil Cummings </h3>
 
 
-:star: Star us on GitHub — it helps!
-
 ## Table Of Contents
 - [Reactivities](#reactivities)
   - [Table Of Contents](#table-of-contents)
